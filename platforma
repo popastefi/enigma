@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
+</style>
+</head>
+<body onload="startGame()">
+<script>
+
+var myGamePiece;
+
+function startGame() {
+    myGameArea.start();
+    myGamePiece = new component(20, 20, "red", 50, 480);
+    myGamePiece = new component(20, 20, "blue", 70, 480);
+    myGamePiece = new component(20, 20, "green", 90, 480);
+    myGamePiece = new component(20, 20, "violet", 110, 480);
+    myGamePiece = new component(20, 20,"red", 130, 480);
+    myGamePiece = new component(20, 20,"blue", 170, 480);
+    myGamePiece = new component(20, 20,"violet", 190, 480);
+    myGamePiece = new component(20, 20,"green", 210, 480);
+    myGamePiece = new component(20, 20,"violet", 230, 480);
+    myGamePiece = new component(20, 20,"red", 250, 480);
+   
+    myGamePiece = new component(20, 20,"green", 70, 460);
+    myGamePiece = new component(20, 20,"blue", 90, 460);
+    myGamePiece = new component(20, 20,"violet", 110, 460);
+    myGamePiece = new component(20, 20,"blue", 130, 460);
+    myGamePiece = new component(20, 20,"blue", 170, 460);
+    myGamePiece = new component(20, 20,"violet", 190, 460);
+    myGamePiece = new component(20, 20,"red", 210, 460);
+    myGamePiece = new component(20, 20,"blue", 230, 460);
+
+    myGamePiece = new component(20, 20,"blue", 90, 440);
+    myGamePiece = new component(20, 20,"red", 110, 440);
+    myGamePiece = new component(20, 20,"blue", 130, 440);
+    myGamePiece = new component(20, 20,"green", 170, 440);
+    myGamePiece = new component(20, 20,"red", 190, 440);
+    myGamePiece = new component(20, 20,"blue", 210, 440);
+
+    
+
+}
+
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 700;
+        this.canvas.height = 500;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+    }
+}
+
+function component(width, height, color, x, y) {
+    this.width = width;
+    this.height = height;
+    this.x = x;
+    this.y = y;    
+    ctx = myGameArea.context;
+    ctx.fillStyle = color;
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+}
+
+</script>
+
+<p>We have added a component to our game, a red square!</p>
+
+</body>
+</html>
